@@ -37,7 +37,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "nodemon src/server/index.ts"
+    "serve": "nodemon src/server/index.ts",
+    "prisma": "npx prisma studio",
+    "migrate": "npx prisma migrate dev --preview-feature"
   },
   "eslintConfig": {
     "extends": [

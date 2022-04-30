@@ -1,5 +1,7 @@
+import { project } from '@prisma/client';
 import { GraphQLList } from 'graphql';
-import { getAllProjects } from '../../../../data/types/projectService.js';
+import { getAllProjects } from '../../../../data/projectService.js';
+import { IApolloServerContext } from '../../../../interfaces/IApolloServerContext.js';
 import GqlProject  from './../../typedefs/GqlProject.js';
 
 const projects = [
@@ -19,8 +21,13 @@ const projects = [
 
 const getAllProjectsQuery = {
     type: new GraphQLList(GqlProject),
-    resolve: async (_source: unknown) => {
-        return await getAllProjects();
+    resolve: async (
+        _source: unknown,
+        _args: unknown,
+        _context: IApolloServerContext,
+        _info: unknown
+        ) : Promise<project[]> => {
+        return getAllProjects();
     },
 };
 
