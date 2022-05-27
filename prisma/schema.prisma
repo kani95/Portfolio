@@ -15,5 +15,4 @@ model project {
   title String
   short_description String
   long_description String
-  image_url String
 }

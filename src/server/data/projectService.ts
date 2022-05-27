@@ -1,5 +1,8 @@
 import { project } from '@prisma/client';
-import prisma from "../prisma/client.js";
+import prisma from "../prisma/client.js"; 
+
+// !!! UNCOMMENT BELOW TO: npm test !!! 
+//import prisma from "../prisma/client"; 
 
 export const getAllProjects = async (): Promise<project[]> => {
     return prisma.project.findMany();
